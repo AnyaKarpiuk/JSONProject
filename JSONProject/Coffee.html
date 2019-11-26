@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Coffee</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+
+	<style>
+		body {
+			background-color: #404F53;
+			margin: 30px;
+		}
+
+		h1 {
+			font-size: 60px;
+			color: #FFEAEF;
+		}
+
+		table {
+			background: #FFEAEF;
+			border-color: black;
+			border-width: 40px;
+			width: 100%;
+			border-collapse: collapse;
+			text-align: center;
+			font-family: "Snell Roundhand";
+		}
+
+		th,
+		td {
+			border: 3px solid black;
+		}
+
+		th {
+			font-size: 18px;
+			font-weight: bold;
+			color: #404F53;
+		}
+
+		td {
+			font-size: 14px;
+			color: #404F53;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1 align="center" style="'Indie Flower', cursive;">Coffee</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th colspan="9">Types of coffee</th>
+			</tr>
+			<tr>
+				<th colspan="3"></th>
+				<th colspan="5">Ingredients</th>
+				<th></th>
+			</tr>
+			<tr>
+				<th>NAME</th>
+				<th>SHOT TIME</th>
+				<th>CUP SIZE</th>
+				<th>WATER</th>
+				<th>MILK</th>
+				<th>FOAM</th>
+				<th>CHOCOLATE</th>
+				<th>ADDITIONAL</th>
+				<th>INSTRUCTION</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Macchiato Single</td>
+				<td>24 seconds</td>
+				<td>100 ml</td>
+				<td></td>
+				<td></td>
+				<td>10%</td>
+				<td></td>
+				<td></td>
+				<td align="left">Extract single shot of coffee.
+					<br>Steam milk.
+					<br>Add few spoons of foam on a top.</td>
+			</tr>
+			<tr>
+				<td>Macchiato Double</td>
+				<td>24 seconds</td>
+				<td>150 ml</td>
+				<td></td>
+				<td></td>
+				<td>10%</td>
+				<td></td>
+				<td></td>
+				<td align="left">Extract double shot of coffee.
+					<br> Steam milk.
+					<br> Add few spoons of foam on a top.</td>
+			</tr>
+			<tr>
+				<td>Ristretto</td>
+				<td>17 seconds</td>
+				<td>100 ml</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td align="left">When extraction double shot of coffee press a button stop after 17 seconds.</td>
+			</tr>
+			<tr>
+				<td>Americano Black</td>
+				<td>24 seconds</td>
+				<td>300 ml</td>
+				<td>70%</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td align="left">Extract double shot of coffee.
+					<br>Add hot water.</td>
+			</tr>
+			<tr>
+				<td>Americano White</td>
+				<td>24 seconds</td>
+				<td>300 ml</td>
+				<td>70%</td>
+				<td>5%</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td align="left">Extract double shot of coffee.
+					<br>Add hot water.
+					<br>Add splash of hot milk.</td>
+			</tr>
+			<tr coffeeArt="true">
+				<td>Latte</td>
+				<td>24 seconds</td>
+				<td>300 ml</td>
+				<td></td>
+				<td>50%</td>
+				<td>20%</td>
+				<td></td>
+				<td>syrops <br> cinnamon</td>
+				<td align="left">Extract double shot of coffee.
+					<br>Steam milk, leaving a steamer on a top for 3 seconds.
+					<br>Pour milk in a cup and after slowly add a shot of coffee.</td>
+			</tr>
+			<tr coffeeArt="true">
+				<td>Cappuccino</td>
+				<td>24 seconds</td>
+				<td>300 ml</td>
+				<td></td>
+				<td>20%</td>
+				<td>50%</td>
+				<td></td>
+				<td>syrops <br> chocolate</td>
+				<td align="left">Extract double shot of coffee.
+					<br>Steam milk, leaving a steamer on a top for 10 seconds.
+					<br>Add steamed milk in a cup with a shot.</td>
+			</tr>
+			<tr coffeeArt="true">
+				<td>Mocha</td>
+				<td>24 seconds</td>
+				<td>300 ml</td>
+				<td></td>
+				<td>50%</td>
+				<td>20%</td>
+				<td>2 spoons</td>
+				<td>syrops <br> marshmallows</td>
+				<td align="left">Extract double shot of coffee and mix it with chocolate until it dissolves.
+					<br>Steam milk, leaving a steamer on a top for 3 seconds.
+					<br>Pour milk in a cup with coffee and chocolate.</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form>
+		<input id="showCoffeeArt" type="checkbox" value="isArt">
+		<label for="showCoffeeArt" style="color: #FFEAEF; font-size:22px; font-weight:bold">Possible to make coffee art</label>
+	</form>
+
+</body>
+
+</html>
