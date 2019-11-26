@@ -1,0 +1,138 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "Coffee.json",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "The name of coffee",
+                "type": "string",
+                "minLength": 3,
+                "maxlength": 10
+            },
+            "subname": {
+                "description": "The additional name",
+                "type": "string",
+                "minLength": 3,
+                "maxlength": 10
+            },
+            "shotTime": {
+                "description": "The number of seconds needed for extracting coffee",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 30
+            },
+            "cupSize": {
+                "description": "The size of a cup measured in miligrams",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 900
+            },
+            "ingredients": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "water": {
+                            "type": "boolean"
+                        },
+                        "amount": {
+                            "description": "The amount of water in percentage",
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 100
+                        }
+                    },
+                    "type": "object",
+                    "properties": {
+                        "milk": {
+                            "type": "boolean"
+                        },
+                        "amount": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "milkAmount": {
+                                        "description": "The amount of warm milk in percentage",
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "maximum": 100
+                                    },
+                                    "foamAmount": {
+                                        "description": "The amount of foam in percentage",
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "maximum": 100
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "type": "object",
+                    "properties": {
+                        "chocolate": {
+                            "type": "boolean"
+                        },
+                        "amount": {
+                            "description": "The amount of chocolate in percentage",
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 100
+                        }
+                    },
+                    "type": "object",
+                    "properties": {
+                        "additionalIngredients": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxlength": 20
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true,
+                            "pattern": "[a-zA-Z]"
+                        }
+                    }
+                }
+            },
+            "instruction": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "stepOne": {
+                            "type": "string",
+                            "minLength": 10,
+                            "maxlength": 30
+                        },
+                        "stepTwo": {
+                            "type": "string",
+                            "minLength": 10,
+                            "maxlength": 30
+                        },
+                        "stepThree": {
+                            "type": "string",
+                            "minLength": 10,
+                            "maxlength": 30
+                        }
+                    },
+                    "required": [
+                        "stepOne"
+                    ]
+                }
+            },
+            "coffeeArt": {
+                "type": "boolean"
+            }
+        },
+        "required": [
+            "name",
+            "shotTime",
+            "cupSize",
+            "instruction"
+        ]
+    }
+}
