@@ -61,7 +61,7 @@
 
 	<script>
                                     // Highlight coffee from a list that allow to make a coffee art on a top 
-                                    //
+                                    // Reference: Mikhail Timofeev
 		function highlightCoffeeArt(idTable, bShowVeg) {
 			var oTable = document.getElementById(idTable);
                                     
@@ -87,9 +87,11 @@
 			});
 		});
 
+                                    // Functions display instruction for each type of coffee
+                                    // when the button is pressed
         function addInstruction() {
             var inst = document.getElementById("instruction");
-             
+                                    // if 
             inst = (inst.style.display === "none") ? inst.style.display = "block" : inst.style.display = "none";
         }
         function addInstruction2() {
