@@ -8,7 +8,7 @@
 
 	<style>
 		body {
-			background-color: #404F53;
+			background: linear-gradient(110deg, #404F53 50%, #688087 20%);
 			margin: 30px;
 		}
 
@@ -42,14 +42,93 @@
 			font-size: 14px;
 			color: #404F53;
 		}
+
+		.button {
+			background-color: #FFEAEF;
+			color: #688087;
+			font-family: "Snell Roundhand";
+			text-align: center;
+			border: 2px solid #404F53;
+			font-size: 24px;
+			margin: auto;
+			display: block;
+		}
+
+		.button:hover {
+			background-color: #404F53;
+		}
 	</style>
+
+	<script>
+                                    // Highlight coffee from a list that allow to make a coffee art on a top 
+                                    //
+		function highlightCoffeeArt(idTable, bShowVeg) {
+			var oTable = document.getElementById(idTable);
+                                    
+			var oTBODY = oTable.getElementsByTagName('TBODY')[0];
+			var aTRs = oTBODY.getElementsByTagName('TR');
+									// Loop through each row of the table starting from a first						
+			for (var i = 0; i < aTRs.length; i++) {
+                                    // Check if a row has the attribute called 'coffeeArt' and if it 
+                                    // equals true change a color of a whole row
+				if (aTRs[i].getAttribute('coffeeArt') && aTRs[i].getAttribute('coffeeArt') == "true") {
+					if (bShowVeg){
+						aTRs[i].style.backgroundColor = "#C3B1C7";
+					} else {
+						aTRs[i].style.backgroundColor = "";
+					};
+				};
+			};
+		};
+                                    // if checkbox is clicked - highlight rows 
+         window.addEventListener("load", function() {
+			document.querySelector("#showCoffeeArt").addEventListener("click", function() {
+			    highlightCoffeeArt('coffeeTable', this.checked);
+			});
+		});
+
+        function addInstruction() {
+            var inst = document.getElementById("instruction");
+             
+            inst = (inst.style.display === "none") ? inst.style.display = "block" : inst.style.display = "none";
+        }
+        function addInstruction2() {
+            var inst = document.getElementById("instruction2");
+            inst = (inst.style.display === "none") ? inst.style.display = "block" : inst.style.display = "none";
+        }
+        function addInstruction3() {
+            var inst = document.getElementById("instruction3");
+            inst = (inst.style.display === "none") ? inst.style.display = "block" : inst.style.display = "none";
+        }
+        function addInstruction4() {
+            var inst = document.getElementById("instruction4");
+            inst = (inst.style.display === "none") ? inst.style.display = "block" : inst.style.display = "none";
+        }
+        function addInstruction5() {
+            var inst = document.getElementById("instruction5");
+            inst = (inst.style.display === "none") ? inst.style.display = "block" : inst.style.display = "none";
+        }
+        function addInstruction6() {
+            var inst = document.getElementById("instruction6");
+            inst = (inst.style.display === "none") ? inst.style.display = "block" : inst.style.display = "none";
+        }
+        function addInstruction7() {
+            var inst = document.getElementById("instruction7");
+            inst = (inst.style.display === "none") ? inst.style.display = "block" : inst.style.display = "none";
+        }
+        function addInstruction8() {
+            var inst = document.getElementById("instruction8");
+            inst = (inst.style.display === "none") ? inst.style.display = "block" : inst.style.display = "none";
+        }
+        
+	</script>
 
 </head>
 
 <body>
 	<h1 align="center" style="'Indie Flower', cursive;">Coffee</h1>
 
-	<table>
+	<table id="coffeeTable">
 		<thead>
 			<tr>
 				<th colspan="9">Types of coffee</th>
@@ -81,9 +160,11 @@
 				<td>10%</td>
 				<td></td>
 				<td></td>
-				<td align="left">Extract single shot of coffee.
-					<br>Steam milk.
-					<br>Add few spoons of foam on a top.</td>
+				<td align="left"><button  onclick="addInstruction()" class="button">↓</button>
+					<div id="instruction" style="display:none"><br>1. Extract single shot of coffee.
+						<br>2. Steam milk.
+						<br>3. Add few spoons of foam on a top.</div>
+				</td>
 			</tr>
 			<tr>
 				<td>Macchiato Double</td>
@@ -94,9 +175,11 @@
 				<td>10%</td>
 				<td></td>
 				<td></td>
-				<td align="left">Extract double shot of coffee.
-					<br> Steam milk.
-					<br> Add few spoons of foam on a top.</td>
+				<td align="left"><button onclick="addInstruction2()" class="button">↓</button>
+					<div id="instruction2" style="display:none"><br>1. Extract double shot of coffee.
+						<br> 2. Steam milk.
+						<br> 3. Add few spoons of foam on a top. </div>
+				</td>
 			</tr>
 			<tr>
 				<td>Ristretto</td>
@@ -107,7 +190,9 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td align="left">When extraction double shot of coffee press a button stop after 17 seconds.</td>
+				<td align="left"><button onclick="addInstruction3()" class="button">↓</button>
+					<div id="instruction3" style="display:none"><br>When extracting double shot of coffee press a button stop after 17 seconds.</div>
+                </td>
 			</tr>
 			<tr>
 				<td>Americano Black</td>
@@ -118,8 +203,9 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td align="left">Extract double shot of coffee.
-					<br>Add hot water.</td>
+				<td align="left"><button onclick="addInstruction4()" class="button">↓</button>
+					<div id="instruction4" style="display:none"><br>1. Extract double shot of coffee.
+					<br>2. Add hot water.</div></td>
 			</tr>
 			<tr>
 				<td>Americano White</td>
@@ -130,9 +216,10 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td align="left">Extract double shot of coffee.
-					<br>Add hot water.
-					<br>Add splash of hot milk.</td>
+				<td align="left"><button onclick="addInstruction5()" class="button">↓</button>
+					<div id="instruction5" style="display:none"><br>1. Extract double shot of coffee.
+					<br>2. Add hot water.
+					<br>3. Add splash of hot milk.</div></td>
 			</tr>
 			<tr coffeeArt="true">
 				<td>Latte</td>
@@ -143,9 +230,10 @@
 				<td>20%</td>
 				<td></td>
 				<td>syrops <br> cinnamon</td>
-				<td align="left">Extract double shot of coffee.
-					<br>Steam milk, leaving a steamer on a top for 3 seconds.
-					<br>Pour milk in a cup and after slowly add a shot of coffee.</td>
+				<td align="left"><button onclick="addInstruction6()" class="button">↓</button>
+					<div id="instruction6" style="display:none"><br>1. Extract double shot of coffee.
+					<br>2. Steam milk, leaving a steamer on a top for 3 seconds.
+					<br>3. Pour milk in a cup and after slowly add a shot of coffee.</div></td>
 			</tr>
 			<tr coffeeArt="true">
 				<td>Cappuccino</td>
@@ -156,9 +244,10 @@
 				<td>50%</td>
 				<td></td>
 				<td>syrops <br> chocolate</td>
-				<td align="left">Extract double shot of coffee.
-					<br>Steam milk, leaving a steamer on a top for 10 seconds.
-					<br>Add steamed milk in a cup with a shot.</td>
+				<td align="left"><button onclick="addInstruction7()" class="button">↓</button>
+					<div id="instruction7" style="display:none"><br>1. Extract double shot of coffee.
+					<br>2. Steam milk, leaving a steamer on a top for 10 seconds.
+					<br>3. Add steamed milk in a cup with a shot.</div></td>
 			</tr>
 			<tr coffeeArt="true">
 				<td>Mocha</td>
@@ -169,9 +258,10 @@
 				<td>20%</td>
 				<td>2 spoons</td>
 				<td>syrops <br> marshmallows</td>
-				<td align="left">Extract double shot of coffee and mix it with chocolate until it dissolves.
-					<br>Steam milk, leaving a steamer on a top for 3 seconds.
-					<br>Pour milk in a cup with coffee and chocolate.</td>
+				<td align="left"><button onclick="addInstruction8()" class="button">↓</button>
+					<div id="instruction8" style="display:none"><br>1. Extract double shot of coffee and mix it with chocolate until it dissolves.
+					<br>2. Steam milk, leaving a steamer on a top for 3 seconds.
+					<br>3. Pour milk in a cup with coffee and chocolate.</div></td>
 			</tr>
 		</tbody>
 	</table>
