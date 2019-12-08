@@ -22,10 +22,3 @@ var coffee = [
     instruction: "Extract double shot of coffee and mix it with chocolate until it dissolves. Steam milk, leaving a steamer on a top for 3 seconds. Pour milk in a cup with coffee and chocolate."}
 
 ];
-
-
-
-
-
-
-
