@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Bare - Start Bootstrap Template</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/Test.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+		<div class="container">
+			<a class="navbar-brand text-warning" href="#">Coffee</a>
+			<button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-warning"></span>
+      </button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link " href="#">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-warning" href="#">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-warning" href="#">Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-warning" href="#">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Page Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 text-left">
+				<h1 class="mt-5 text-warning">Welcome to my Coffee application</h1>
+				<p class="lead">Select your entrees from the menu below.</p>
+			</div>
+			<!-- fields for a client's input -->
+			<div id="result" class="col-lg-16 text-center order-3"> </div>
+
+			<div class="col-lg-4 text-center order-2">
+				<form enctype="application/json" action="/post/json" method="post">
+					<div class="form-group">
+						<input class="form-control" type="text" name="name" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" name="subname" placeholder="Subname">
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" name="shotTime" placeholder="Shot time">
+					</div>
+					<div class="form-group">
+						<select class="form-control" name="cupSize">
+							<option value="0">Cup size</option>
+							<option value="1">100ml</option>
+							<option value="2">150ml</option>
+							<option value="3">300ml</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" name="waterAmount" placeholder="Water amount (%)">
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" name="milkAmount" placeholder="Milk amount (%)">
+					</div>
+                    <div class="form-group">
+						<input class="form-control" type="text" name="foamAmount" placeholder="Foam amount (%)">
+					</div>
+                    <div class="form-group">
+						<input class="form-control" type="text" name="chocolate" placeholder="Chocolate amount (spoons)">
+					</div>
+                    <div class="form-group">
+						<input class="form-control" type="text" name="instruction" placeholder="Instruction">
+					</div>
+
+					<!-- Create submit button -->
+					<button type="submit" class="btn btn-dark btn-block text-warning">Submit</button>
+				</form>
+
+				<!-- Create delete button -->
+				<button id="delete" class="btn btn-block btn-warning text-dark">Delete</button>
+				<p class="text-dark"></p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="jquery/jquery.slim.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="jquery/table.js"></script>
+
+	<!-- Tabulator css and js links -->
+	<link href="https://unpkg.com/tabulator-tables@4.5.1/dist/css/tabulator.min.css" rel="stylesheet">
+	<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.5.1/dist/js/tabulator.min.js"></script>
+
+	<!-- Create table and place it in div 'result' -->
+	<script>
+		var table = new Tabulator("#result", {
+        height:"500px",
+        width:"1200px",
+        data:coffee,
+        layout:"fitColumns",
+        selectable:true,
+        columns:[
+            {title:"Name", field:"name", width:120, responsive:0}, 
+            {title:"Subname", field:"subname", width:120},
+            {title:"Shot time", field:"shotTime", width:80, responsive:2}, 
+            {title:"Cup size", field:"cupSize", width:80},
+            {
+                title:"Ingredients", 
+                columns:[
+                    {title:"Water", field:"waterAmount", align:"center", width:80},
+                    {
+                        title:"Milk", 
+                        columns:[
+                        {title:"Milk", field:"milkAmount", align:"center", width:80},
+                        {title:"Foam", field:"foamAmount", align:"center", width:80},
+                        ],
+                    },
+                    {title:"Chocolate", field:"chocolate", align:"center", width:80},
+                ],
+            },
+            {title:"Instruction", field:"instruction", align:"left", formatter:"textarea", width:180},
+        ],
+    });
+	</script>
+
+</body>
+
+</html>
